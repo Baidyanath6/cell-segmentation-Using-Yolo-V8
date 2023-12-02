@@ -1,12 +1,11 @@
-import sys
+import os, sys
 from cellSegmentation.logger import logging
 from cellSegmentation.exception import AppException
 
 
-logging.info("welcome to the custom log")
+from cellSegmentation.pipeline.training_pipeline import TrainPipeline
 
-try:
-    a = '2'/4
+obj = TrainPipeline()
+obj.run_pipeline()
 
-except Exception as e:
-    raise AppException(e, sys)
+print('Training Completed.')
