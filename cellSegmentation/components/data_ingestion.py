@@ -7,14 +7,15 @@ from cellSegmentation.exception import AppException
 from cellSegmentation.entity.config_entity import DataIngestionConfig
 from cellSegmentation.entity.artifacts_entity import DataIngestionArtifact
 
-class DataIngestion: 
-    def __init__(self, data_ingestion_config:DataIngestionConfig = DataIngestionConfig()):
 
+class DataIngestion:
+    def __init__(self, data_ingestion_config: DataIngestionConfig = DataIngestionConfig()):
         try:
+            print(data_ingestion_config)
             self.data_ingestion_config = data_ingestion_config
-
+            
         except Exception as e:
-            raise AppException(e, sys)
+           raise AppException(e, sys)
         
     def download_data(self)-> str:
         '''

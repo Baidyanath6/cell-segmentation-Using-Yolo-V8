@@ -37,8 +37,6 @@ class DataValidationConfig:
 
 
 
-
-
 @dataclass
 class ModelTrainerConfig:
     model_trainer_dir: str = os.path.join(
